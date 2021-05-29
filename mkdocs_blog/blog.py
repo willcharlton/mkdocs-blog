@@ -59,7 +59,10 @@ class Blog(BasePlugin):
 
                 chronological[yeartime][monthtime][mtime] = f.page
 
-        ordered.sort(key=lambda tup: (tup[1], tup[2], tup[3]))
+        ordered.sort(
+            key=lambda tup: (tup[1], tup[2], tup[3]),
+            reverse=True
+        )
 
         config['ordered'] = ordered
         config['chronological'] = chronological
